@@ -1,0 +1,27 @@
+/* Graffiti lettering is limited to the highlighted words in section titles. */
+:root{--graffiti-font:'Permanent Marker',Impact,'Arial Black',sans-serif}
+.hero h1 em,
+.feature h2 em,
+.section-head h2 span,
+.reviews h2 span,
+.process h2 span,
+.location-content h2 span,
+.contact h2 span{
+  font-family:var(--graffiti-font);
+  font-size:.72em;
+  font-style:normal;
+  font-weight:400;
+  letter-spacing:-.035em;
+  color:#f7f7f7;
+  -webkit-text-stroke:0;
+  text-shadow:none;
+}
+.hero h1 em{font-size:.78em}
+.feature h2 em,.gallery h2 span{font-size:.60em}
+.process h2 span{color:#111}
+.hero h1,.feature h2,.section-head h2,.reviews h2,.process h2,.location-content h2,.contact h2{line-height:.98}
+@media(max-width:700px){
+  .hero h1 em{font-size:.74em}
+  .gallery h2 span{font-size:.55em}
+  .section-head h2 span,.reviews h2 span,.process h2 span{font-size:.68em}
+}

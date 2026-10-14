@@ -1,0 +1,16 @@
+/* Publishing content: real review source and concise, crawlable answers. */
+.reviews-intro{max-width:360px;margin:0 0 4px;color:#bcbcbc;font-size:15px;line-height:1.65}
+.reviews-source{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:30px}
+.reviews-source>span{color:#aaa;font-size:10px;font-weight:700;letter-spacing:2px}
+.reviews-source .button{flex:none}
+.location-address{display:block;margin:22px 0 26px;color:#f5f5f5;font:700 clamp(20px,2.2vw,29px)/1.2 var(--display);font-style:normal;text-transform:uppercase;letter-spacing:.3px}
+.faq{display:grid;grid-template-columns:minmax(240px,.76fr) minmax(0,1.24fr);gap:clamp(42px,7vw,120px);border-top:1px solid var(--line)}
+.faq-heading h2{font:800 clamp(60px,6.5vw,105px)/.98 var(--display);letter-spacing:-1.8px;text-transform:uppercase;margin:18px 0 26px}
+.faq-heading h2 span{font:400 .68em/.98 var(--graffiti-font);letter-spacing:-.035em;color:#f7f7f7}
+.faq-heading>p:last-child{max-width:350px;color:var(--muted);font-size:15px;line-height:1.7}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,1.15fr);gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.faq-item h3{font:800 clamp(24px,2.5vw,34px)/1.05 var(--display);text-transform:uppercase;margin:0}
+.faq-item p{font-size:14px;line-height:1.7;color:#bbb;margin:0}
+@media(max-width:900px){.faq{grid-template-columns:1fr;gap:30px}.faq-heading>p:last-child{max-width:520px}.faq-item{grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr)}}
+@media(max-width:700px){.reviews-intro{max-width:100%;margin-top:20px}.reviews-source{align-items:flex-start;flex-direction:column;padding-top:25px}.reviews-source .button{width:100%}.faq-heading h2{font-size:clamp(59px,12vw,82px)}.faq-item{grid-template-columns:1fr;gap:9px;padding:24px 0}.faq-item h3{font-size:28px}}

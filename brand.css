@@ -1,0 +1,88 @@
+/* KPT identity: monochrome logo and a black, white and graphite palette. */
+:root{--bg:#080808;--panel:#171717;--line:#383838;--text:#f7f7f7;--muted:#aaa;--red:#f2f2f2;--red-dark:#d4d4d4}
+body{background:var(--bg);color:var(--text)}
+html{scroll-padding-top:92px}
+
+.site-header{position:fixed;right:0;width:auto;background:transparent;color:#fff;border:0;box-shadow:none;backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);transition:top .3s ease,left .3s ease,right .3s ease,border-radius .3s ease,background-color .3s ease,box-shadow .3s ease,backdrop-filter .3s ease}
+.site-header.is-scrolled{top:10px;left:max(16px, calc(50vw - 660px));right:max(16px, calc(50vw - 660px));background:rgba(9,9,11,.78);border:1px solid rgba(255,255,255,.2);border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.23);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.header-inner{transition:height .3s ease}
+.site-header.is-scrolled .header-inner{height:64px}
+.brand{display:inline-flex;flex-direction:row;align-items:center;gap:9px;line-height:1}
+.brand-logo{--logo-outline:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);width:59px;height:59px;object-fit:contain;flex:none;background:transparent;filter:var(--logo-outline);transition:width .3s ease,height .3s ease}
+.brand-type{display:flex;flex-direction:column;gap:2px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.brand-type strong{font:900 32px/.83 var(--display);letter-spacing:-.7px;transition:font-size .3s ease}
+.brand-type small{font:800 8px/1 var(--body);letter-spacing:2.5px;transition:font-size .3s ease}
+.site-header.is-scrolled .brand-logo{width:42px;height:42px}
+.site-header.is-scrolled .brand-type strong{font-size:24px}
+.site-header.is-scrolled .brand-type small{font-size:7px}
+.brand-footer .brand-type{color:#111;text-shadow:none}
+.brand-footer .brand-logo{width:92px;height:92px;filter:var(--logo-outline) invert(1)}
+.brand-footer .brand-type strong{font-size:47px}
+.brand-footer .brand-type small{font-size:10px;letter-spacing:3.6px}
+.main-nav{transition:gap .3s ease}
+.main-nav>a:not(.nav-cta){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);transition:color .2s,font-size .3s}
+.main-nav>a:not(.nav-cta):hover{color:#d4d4d4}
+.site-header.is-scrolled .main-nav{gap:clamp(11px,1.6vw,22px)}
+.site-header.is-scrolled .main-nav>a:not(.nav-cta){font-size:11px}
+.nav-cta{border-color:#fff;color:#fff;background:rgba(0,0,0,.18);transition:background .2s,border-color .2s,color .2s,padding .3s,font-size .3s}
+.nav-cta:hover{background:#fff;border-color:#fff;color:#111}
+.site-header.is-scrolled .nav-cta{padding:10px 13px;font-size:10px}
+.menu-toggle{background:#111}
+
+.hero-image,.feature-photo img,.gallery-item img,.lightbox img{filter:none}
+.gallery-item:hover img{filter:brightness(.68)}
+.location-map iframe{filter:none}
+.eyebrow-line{background:#fff}
+.hero-scroll span{color:#fff}
+.hero h1 em,.feature h2 em,.section-head h2 span,.contact h2 span,.reviews h2 span,.location-content h2 span{color:transparent;-webkit-text-stroke:1.25px #f5f5f5}
+.button-red{background:#f2f2f2;border-color:#f2f2f2;color:#111}
+.button-red:hover{background:#d4d4d4;border-color:#d4d4d4;color:#111}
+.button-outline:hover{background:#fff;color:#111;border-color:#fff}
+
+.intro-band{background:#f2f2f2;color:#111}
+.intro-grid .eyebrow{color:#444}
+.intro-grid>p:nth-child(2) span{color:#777}
+.intro-line{background:#555}
+.service-row:hover{background:linear-gradient(90deg,rgba(255,255,255,.08),transparent 70%)}
+.filter:hover,.filter.active{background:#f2f2f2;border-color:#f2f2f2;color:#111}
+
+.process{background:#f2f2f2;color:#111}
+.process h2 span{color:transparent;-webkit-text-stroke:1.25px #111}
+.steps,.step{border-color:rgba(0,0,0,.28)}
+.step>span{color:#666}
+.step p{color:#555}
+.review footer small{color:#cfcfcf}
+
+.footer{background:#fff;color:#111;border-top-color:#ddd}
+.footer-bottom{border-top-color:#ddd;color:#666}
+.footer-bottom a{color:#111}
+.footer a:hover{color:#666}
+.whatsapp-float{background:#fff;color:#111;border:1px solid #111}
+.whatsapp-float:hover{background:#ddd;color:#111}
+.lightbox-close{background:#fff;color:#111}
+.location-map-link:hover{background:#fff;color:#111}
+
+@media(max-width:700px){
+  html{scroll-padding-top:76px}
+  .site-header.is-scrolled{top:8px;left:8px;right:8px;border-radius:16px}
+  .site-header.is-scrolled .header-inner{width:calc(100% - 28px);height:56px}
+  .site-header .main-nav{background:#fff;color:#111;border-bottom-color:#ddd;max-height:calc(100dvh - 70px);overflow-y:auto}
+  .site-header.is-scrolled .main-nav{top:56px;gap:0;background:rgba(250,250,250,.96);border-radius:0 0 16px 16px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .site-header .main-nav>a:not(.nav-cta){color:#111;text-shadow:none;border-bottom-color:#ddd}
+  .site-header.is-scrolled .main-nav>a:not(.nav-cta){font-size:15px}
+  .nav-cta{background:#111;color:#fff}
+  .nav-cta:hover{background:#444;border-color:#444;color:#fff}
+  .brand-logo{width:48px;height:48px}
+  .brand-type strong{font-size:27px}
+  .brand-type small{font-size:7px;letter-spacing:2px}
+  .site-header.is-scrolled .brand-logo{width:38px;height:38px}
+  .site-header.is-scrolled .brand-type strong{font-size:22px}
+  .site-header.is-scrolled .brand-type small{font-size:6px}
+  .brand-footer .brand-logo{width:64px;height:64px}
+  .brand-footer .brand-type strong{font-size:32px}
+  .brand-footer .brand-type small{font-size:7px;letter-spacing:2px}
+}
+@supports not (-webkit-text-stroke:1px #fff){
+  .hero h1 em,.feature h2 em,.section-head h2 span,.contact h2 span,.reviews h2 span,.location-content h2 span{color:#c9c9c9}
+  .process h2 span{color:#777}
+}
