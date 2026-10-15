@@ -1,8 +1,24 @@
-/* Publishing content: real review source and concise, crawlable answers. */
-.reviews-intro{max-width:360px;margin:0 0 4px;color:#bcbcbc;font-size:15px;line-height:1.65}
-.reviews-source{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:30px}
+/* Google review excerpts supplied by KPT. */
+.reviews h2 span{font:400 .72em/.96 var(--graffiti-font);color:#f7f7f7;letter-spacing:-.035em}
+.reviews-top{align-items:end;margin-bottom:48px}
+.reviews-rating{display:flex;align-items:flex-end;gap:18px;padding-bottom:2px;white-space:nowrap}
+.reviews-rating>strong{font:800 clamp(82px,9vw,140px)/.72 var(--display);letter-spacing:-5px}
+.reviews-rating>div{display:flex;flex-direction:column;gap:8px;padding-bottom:2px}
+.review-stars{color:#fff;font-size:18px;letter-spacing:2px;line-height:1;white-space:nowrap}
+.reviews-rating-label{color:#bbb;font-size:10px;font-weight:700;letter-spacing:1.7px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #4a4a4d;border-bottom:1px solid #4a4a4d}
+.review-quote{display:flex;flex-direction:column;min-height:290px;margin:0;padding:28px 28px 27px 0}
+.review-quote+.review-quote{border-left:1px solid #4a4a4d;padding-left:28px}
+.review-quote-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:30px}
+.review-quote-top>span:first-child{color:#89898c;font-size:10px;font-weight:700;letter-spacing:1.5px}
+.review-quote-top .review-stars{font-size:14px;letter-spacing:1px}
+.review-quote blockquote{margin:0 0 30px;color:#f1f1f1;font-size:clamp(17px,1.5vw,21px);line-height:1.52}
+.review-quote figcaption{margin-top:auto;font:800 21px/1 var(--display);letter-spacing:.2px;text-transform:uppercase}
+.reviews-source{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:30px}
 .reviews-source>span{color:#aaa;font-size:10px;font-weight:700;letter-spacing:2px}
 .reviews-source .button{flex:none}
+@media(max-width:1000px){.reviews-top{align-items:flex-start;flex-direction:column;gap:34px}.reviews-grid{grid-template-columns:1fr}.review-quote,.review-quote+.review-quote{min-height:0;padding:25px 0;border-left:0}.review-quote+.review-quote{border-top:1px solid #4a4a4d}.review-quote-top{margin-bottom:20px}.review-quote blockquote{max-width:680px;margin-bottom:25px}}
+@media(max-width:700px){.reviews-top{margin-bottom:36px}.reviews-rating{gap:15px}.reviews-rating>strong{font-size:100px}.reviews-rating-label{font-size:9px}.review-quote blockquote{font-size:18px}.reviews-source{align-items:flex-start;flex-direction:column;padding-top:25px}.reviews-source .button{width:100%}}
 .location-address{display:block;margin:22px 0 26px;color:#f5f5f5;font:700 clamp(20px,2.2vw,29px)/1.2 var(--display);font-style:normal;text-transform:uppercase;letter-spacing:.3px}
 .faq{display:grid;grid-template-columns:minmax(240px,.76fr) minmax(0,1.24fr);gap:clamp(42px,7vw,120px);border-top:1px solid var(--line)}
 .faq-heading h2{font:800 clamp(60px,6.5vw,105px)/.98 var(--display);letter-spacing:-1.8px;text-transform:uppercase;margin:18px 0 26px}
@@ -13,4 +29,4 @@
 .faq-item h3{font:800 clamp(24px,2.5vw,34px)/1.05 var(--display);text-transform:uppercase;margin:0}
 .faq-item p{font-size:14px;line-height:1.7;color:#bbb;margin:0}
 @media(max-width:900px){.faq{grid-template-columns:1fr;gap:30px}.faq-heading>p:last-child{max-width:520px}.faq-item{grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr)}}
-@media(max-width:700px){.reviews-intro{max-width:100%;margin-top:20px}.reviews-source{align-items:flex-start;flex-direction:column;padding-top:25px}.reviews-source .button{width:100%}.faq-heading h2{font-size:clamp(59px,12vw,82px)}.faq-item{grid-template-columns:1fr;gap:9px;padding:24px 0}.faq-item h3{font-size:28px}}
+@media(max-width:700px){.faq-heading h2{font-size:clamp(59px,12vw,82px)}.faq-item{grid-template-columns:1fr;gap:9px;padding:24px 0}.faq-item h3{font-size:28px}}
