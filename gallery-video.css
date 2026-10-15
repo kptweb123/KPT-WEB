@@ -1,0 +1,10 @@
+.gallery-video-item .gallery-video-play{position:absolute;z-index:1;top:47%;left:50%;display:grid;place-items:center;width:62px;height:62px;padding-left:3px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(0,0,0,.58);color:#fff;font-size:20px;transform:translate(-50%,-50%);transition:background .25s,transform .25s;pointer-events:none}
+.gallery-video-item:hover .gallery-video-play{background:#fff;color:#111;transform:translate(-50%,-50%) scale(1.08)}
+.gallery-item .gallery-caption strong small{display:block;margin-top:7px;color:#dedede;font:700 9px/1.5 var(--body);letter-spacing:1px}
+.gallery-item[data-category="opticas"] img{object-position:center 25%}
+.video-lightbox{width:min(90vw,760px)}
+.video-lightbox video{display:block;width:min(100%,640px);max-height:calc(92vh - 115px);height:auto;aspect-ratio:1/1;object-fit:contain;margin:auto;background:#000}
+.video-lightbox.is-portrait video{width:min(100%,400px);aspect-ratio:9/16}
+.video-lightbox.is-portrait-wide video{width:min(100%,480px);aspect-ratio:3/4}
+.video-lightbox .lightbox-note{display:block;margin-top:5px;line-height:1.5}
+@media(max-width:700px){.gallery-video-item .gallery-video-play{top:32%;width:46px;height:46px;font-size:16px}.gallery-item .gallery-caption strong small{font-size:8px;letter-spacing:.4px}.gallery-grid>.gallery-item:last-child:not([hidden]){grid-column:1/-1;width:calc((100% - 8px)/2);justify-self:center}.video-lightbox{padding:16px}.video-lightbox p{font-size:23px}}

@@ -72,7 +72,8 @@ document.addEventListener('keydown', event => {
 });
 
 const filters = [...document.querySelectorAll('.filter')];
-const galleryItems = [...document.querySelectorAll('.gallery-item')];
+const galleryItems = [...document.querySelectorAll('.gallery-item:not(.gallery-video-item)')];
+const filterableGalleryItems = [...document.querySelectorAll('.gallery [data-category]')];
 filters.forEach(filter => filter.addEventListener('click', () => {
   const category = filter.dataset.filter;
   filters.forEach(button => {
@@ -80,23 +81,53 @@ filters.forEach(filter => filter.addEventListener('click', () => {
     button.classList.toggle('active', selected);
     button.setAttribute('aria-pressed', String(selected));
   });
-  galleryItems.forEach(item => { item.hidden = category !== 'todos' && item.dataset.category !== category; });
+  filterableGalleryItems.forEach(item => {
+    item.hidden = category !== 'todos' && !item.dataset.category.split(' ').includes(category);
+  });
 }));
 
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxNote = document.getElementById('lightbox-note');
 let lastGalleryTrigger = null;
 galleryItems.forEach(item => item.addEventListener('click', () => {
   lastGalleryTrigger = item;
   lightboxImage.src = item.dataset.image;
   lightboxImage.alt = item.querySelector('img').alt;
   lightboxCaption.textContent = item.dataset.title;
+  lightboxNote.textContent = item.dataset.note || 'IMAGEN ILUSTRATIVA';
   lightbox.showModal();
 }));
 lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
 lightbox.addEventListener('click', event => { if (event.target === lightbox) lightbox.close(); });
 lightbox.addEventListener('close', () => { lightboxImage.src = ''; lastGalleryTrigger?.focus(); });
+
+const videoTriggers = [...document.querySelectorAll('.gallery-video-item')];
+const videoLightbox = document.getElementById('video-lightbox');
+const galleryVideo = videoLightbox.querySelector('video');
+const galleryVideoSource = galleryVideo.querySelector('source');
+let lastVideoTrigger = null;
+videoTriggers.forEach(trigger => trigger.addEventListener('click', () => {
+  lastVideoTrigger = trigger;
+  galleryVideoSource.src = trigger.dataset.video;
+  galleryVideo.poster = trigger.dataset.poster;
+  videoLightbox.classList.toggle('is-portrait', trigger.dataset.orientation === 'portrait');
+  videoLightbox.classList.toggle('is-portrait-wide', trigger.dataset.orientation === 'portrait-wide');
+  document.getElementById('video-lightbox-caption').textContent = trigger.dataset.title;
+  document.getElementById('video-lightbox-note').textContent = trigger.dataset.note;
+  galleryVideo.load();
+  videoLightbox.showModal();
+  galleryVideo.play().catch(() => {});
+}));
+videoLightbox.querySelector('.lightbox-close').addEventListener('click', () => videoLightbox.close());
+videoLightbox.addEventListener('click', event => { if (event.target === videoLightbox) videoLightbox.close(); });
+videoLightbox.addEventListener('close', () => {
+  galleryVideo.pause();
+  galleryVideoSource.removeAttribute('src');
+  galleryVideo.load();
+  lastVideoTrigger?.focus();
+});
 
 const form = document.getElementById('contact-form');
 form.addEventListener('submit', event => {
