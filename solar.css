@@ -1,76 +1,28 @@
-/* Editorial service focus, based on the information supplied by KPT. */
-.solar-focus{
-  padding:clamp(76px,8vw,118px) 0;
-  background:#121214;
-  border-bottom:1px solid var(--line);
+.service-row-solar {
+  align-items: start;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, .045), transparent 78%);
 }
-.solar-focus-layout{
-  display:grid;
-  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
-  gap:clamp(44px,7vw,116px);
-  align-items:start;
+.service-row-solar .service-num,
+.service-row-solar .service-link { margin-top: 7px; }
+.service-solar-copy { min-width: 0; }
+.service-solar-copy h3 { margin-bottom: 20px; }
+.service-solar-copy p {
+  max-width: 76ch;
+  font-size: 13px;
+  line-height: 1.68;
+  letter-spacing: .015em;
 }
-.solar-focus-heading .eyebrow{margin:0}
-.solar-focus h2{
-  font:800 clamp(58px,6.8vw,108px)/.95 var(--display);
-  letter-spacing:-1.8px;
-  text-transform:uppercase;
-  margin:20px 0 0;
+.service-solar-copy p + p { margin-top: 15px; }
+.service-solar-copy p:last-child {
+  color: #f4f4f4;
+  font-weight: 700;
 }
-.solar-focus h2 span{
-  display:block;
-  font-family:var(--graffiti-font);
-  font-size:.55em;
-  font-weight:400;
-  letter-spacing:-.035em;
-  line-height:1.15;
-  color:#f7f7f7;
-}
-.solar-focus-body{
-  border-left:1px solid #49494c;
-  padding-left:clamp(28px,4vw,65px);
-}
-.solar-focus-lead{
-  max-width:540px;
-  margin:0 0 21px;
-  font-size:clamp(21px,2.15vw,31px);
-  font-weight:600;
-  line-height:1.28;
-  letter-spacing:-.5px;
-}
-.solar-focus-body>p:not(.solar-focus-lead){
-  max-width:540px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.75;
-  margin:0;
-}
-.solar-focus-facts{margin:37px 0 22px;border-top:1px solid var(--line)}
-.solar-focus-fact{
-  display:grid;
-  grid-template-columns:115px 1fr;
-  gap:22px;
-  padding:18px 0;
-  border-bottom:1px solid var(--line);
-}
-.solar-focus-fact>span{
-  color:#aaa;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  line-height:1.6;
-}
-.solar-focus-fact strong{font-size:14px;font-weight:600;line-height:1.5}
-.solar-focus-fact small{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:400;line-height:1.5}
-@media(max-width:900px){
-  .solar-focus-layout{grid-template-columns:1fr;gap:39px}
-  .solar-focus-body{border-left:0;border-top:1px solid #49494c;padding:31px 0 0}
-}
-@media(max-width:700px){
-  .solar-focus{padding:76px 0}
-  .solar-focus h2{font-size:clamp(58px,12vw,82px)}
-  .solar-focus h2 span{font-size:.52em}
-  .solar-focus-lead{font-size:23px}
-  .solar-focus-facts{margin-top:30px}
-  .solar-focus-fact{grid-template-columns:1fr;gap:6px;padding:16px 0}
+@media (max-width: 700px) {
+  .service-row-solar { padding-top: 28px; padding-bottom: 28px; }
+  .service-solar-copy h3 { margin-bottom: 17px; }
+  .service-solar-copy p { font-size: 12px; line-height: 1.65; }
+  .service-solar-copy p + p { margin-top: 13px; }
+  .service-row-solar .service-link { margin-top: 2px; }
 }
